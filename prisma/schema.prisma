@@ -1,0 +1,94 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+    provider = "prisma-client-js"
+}
+
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+model Post {
+    id        Int      @id @default(autoincrement())
+    name      String
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
+
+    @@index([name])
+}
+
+// ============================================
+// Task Management System
+// ============================================
+
+// Nether Grasp Task model - for AI agent task management
+model Task {
+    id                  Int      @id @default(autoincrement())
+    componentName       String   // Name of component being created/fixed
+    componentDirectory  String   // Directory path for the component
+    pageName            String   // Page/context where component is used
+    
+    // Status tracking
+    status              String   @default("Pending") // "Pending", "Running", "Deploying", "Completed", "Error"
+    agentId             String?  // Cursor agent ID
+    agentStatus         String?  // "CREATING", "RUNNING", "FINISHED", "ERROR", "EXPIRED"
+    agentUrl            String?  // URL to view agent progress
+    branchName          String?  // Git branch for this task
+    
+    // Task metadata
+    taskType            String   @default("component") // "component", "auto-fix", "deployment-error"
+    deploymentId        String?  // Vercel deployment ID
+    
+    // Error information (for deployment errors)
+    errorLogs           String?  @db.Text // Store as TEXT for long logs
+    errorType           String?
+    errorMessage        String?  @db.Text
+    errorComponentPath  String?
+    errorLineNumber     Int?
+    errorIsAutoFixable  Boolean? @default(false)
+    errorSeverity       String?  // "error", "warning"
+    errorDeploymentUrl  String?
+    errorOriginalTask   String?
+    errorOriginalAgentId String?
+    
+    // Timestamps
+    createdAt           DateTime @default(now())
+    completedAt         DateTime?
+    updatedAt           DateTime @updatedAt
+
+    @@index([agentId])
+    @@index([status])
+    @@index([branchName])
+    @@index([createdAt])
+}
+
+// ============================================
+// Diagram Configuration Storage
+// ============================================
+
+// Stores diagram positions and settings for dbdiagram visualization
+model DiagramConfig {
+    id             Int      @id @default(autoincrement())
+    slug           String   @unique @db.VarChar(255) // Diagram identifier (e.g., "zebi", "main")
+    
+    // DBML content
+    content        String   @db.Text // The DBML schema content
+    
+    // Metadata
+    userid         String   @db.VarChar(255) // Owner identifier
+    name           String   @db.VarChar(255) // Display name
+    
+    // Diagram positions and settings (stored as JSON)
+    diagram        Json     @default("{}") // Contains tables array with x, y positions
+    tableGroups    Json     @default("[]") // Table groupings
+    referencePaths Json     @default("[]") // Reference path customizations
+    detailLevel    String   @default("All") @db.VarChar(50)
+    
+    // Timestamps
+    createdAt      DateTime @default(now()) @map("created_at")
+    updatedAt      DateTime @updatedAt @map("updated_at")
+    
+    @@map("diagram_config")
+}

@@ -1,0 +1,93 @@
+/* TaskModal Component Styles */
+
+.task-modal-container {
+  position: fixed;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  background: var(--color-theme-card);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background-color: rgb(23, 25, 35);
+  border: 1px solid var(--color-theme-border-secondary);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  width: auto;
+  min-width: 170px;
+  z-index: 100;
+  transform-origin: right top;
+  transition: opacity 0.05s ease-out, transform 0.05s ease-out;
+  opacity: 1;
+  transform: scale(1) translateY(0px);
+}
+
+.task-modal-content {
+  padding: 0.125rem;
+}
+
+.task-modal-button {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  outline: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.task-modal-button:hover {
+  background-color: var(--color-theme-bg-card-hover);
+}
+
+.task-modal-button:focus {
+  outline: none;
+}
+
+.task-modal-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.task-modal-button-delete:hover {
+  background-color: rgb(239 68 68 / 0.1);
+}
+
+.task-modal-button-inner {
+  display: flex;
+  min-width: 0;
+  flex: 1 1 0%;
+  gap: 0.375rem;
+  align-items: center;
+}
+
+.task-modal-icon {
+  flex-shrink: 0;
+  color: var(--color-theme-text);
+}
+
+.task-modal-icon-delete {
+  color: rgb(239 68 68);
+}
+
+.task-modal-button-text {
+  min-width: 0;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--color-theme-text);
+}
+
+.task-modal-text-delete {
+  color: rgb(239 68 68);
+}
+
+.task-modal-button .size-3 {
+  width: 0.75rem;
+  height: 0.75rem;
+}
+

@@ -1,0 +1,25 @@
+﻿{
+    "_id":  "www_fuck_jeremy_fr",
+    "content":  "// Database Schema - Auto-synced from Supabase\n// Last synced: 2026-01-26T19:32:44.130Z\n\nTable AiCostData {\n  id Int [pk, increment]\n  totalCost Float [not null]\n  updatedAt DateTime [not null, default: `now()`]\n  chartUrl String\n  csvUrl String\n}\n\nTable AiDailyCost {\n  id Int [pk, increment]\n  date DateTime [not null]\n  cost Float [not null]\n  createdAt DateTime [not null, default: `now()`]\n\n  indexes {\n    date [unique]\n  }\n}\n\nTable ApkVersion {\n  id Int [pk, increment]\n  variant String [not null]\n  version Int [not null]\n  fileName String [not null]\n  createdAt DateTime [not null, default: `now()`]\n\n  indexes {\n    variant [unique]\n  }\n}\n\nTable DeviceProfileLink {\n  id String [pk, default: `gen_random_uuid()`]\n  deviceId String [not null]\n  profileId String [not null]\n  provider String [not null]\n  createdAt DateTime [not null, default: `now()`]\n  profileName String\n\n  indexes {\n    deviceId\n    (provider, deviceId, profileId) [unique]\n  }\n}\n\nTable SmsDeviceMapping {\n  id String [pk, default: `gen_random_uuid()`]\n  deviceId String [not null]\n  displayName String [not null]\n  phoneNumber String\n  createdAt DateTime [not null, default: `now()`]\n  updatedAt DateTime [not null]\n  batteryPercentage Int\n  lastPingAt DateTime\n  undetectableProfileId String\n  provider String\n  installedApps String\n  appVersionCode Int\n  appVersionName String\n\n  indexes {\n    deviceId [unique]\n  }\n}\n\nTable SmsMessage {\n  id String [pk, default: `gen_random_uuid()`]\n  deviceId String [not null]\n  sender String [not null]\n  body String [not null]\n  timestamp DateTime [not null]\n  receivedAt DateTime [default: `now()`]\n  deviceName String\n  phoneNumber String\n\n  indexes {\n    deviceId\n    receivedAt\n    sender\n    timestamp\n  }\n}\n\nTable SmsOutbound {\n  id String [pk, default: `gen_random_uuid()`]\n  deviceId String [not null]\n  recipient String [not null]\n  message String [not null]\n  status String [not null, default: \"pending\"]\n  error String\n  createdAt DateTime [not null, default: `now()`]\n  sentAt DateTime\n\n  indexes {\n    createdAt\n    (deviceId, status)\n  }\n}\n\nTable StatsSnapshot {\n  id Int [pk, increment]\n  leboncoin Int [not null, default: 0]\n  superprof Int [not null, default: 0]\n  whatsapp Int [not null, default: 0]\n  ebay Int [not null, default: 0]\n  vinted Int [not null, default: 0]\n  fnac Int [not null, default: 0]\n  cdiscount Int [not null, default: 0]\n  amazon Int [not null, default: 0]\n  finaryDispo Int\n  fraisTech Int\n  fraisIa Int\n  createdAt DateTime [not null, default: `now()`]\n\n  indexes {\n    createdAt\n  }\n}\n\nTable Task {\n  id Int [pk, increment]\n  componentName String [not null]\n  componentDirectory String [not null]\n  pageName String [not null]\n  status String [not null, default: \"Pending\"]\n  agentId String\n  agentStatus String\n  agentUrl String\n  branchName String\n  taskType String [not null, default: \"component\"]\n  deploymentId String\n  errorLogs String\n  errorType String\n  errorMessage String\n  errorComponentPath String\n  errorLineNumber Int\n  errorIsAutoFixable Boolean [default: false]\n  errorSeverity String\n  errorDeploymentUrl String\n  errorOriginalTask String\n  errorOriginalAgentId String\n  createdAt DateTime [not null, default: `now()`]\n  completedAt DateTime\n  updatedAt DateTime [not null]\n\n  indexes {\n    agentId\n    branchName\n    createdAt\n    status\n  }\n}\n\n// Relationships\nRef: DeviceProfileLink.deviceId \u003e SmsDeviceMapping.deviceId [delete: cascade]",
+    "userid":  "wwwfuckjeremyfr",
+    "name":  " www fuck jeremy fr.Groups[1].Value.ToUpper() ww  www fuck jeremy fr.Groups[1].Value.ToUpper() uck  www fuck jeremy fr.Groups[1].Value.ToUpper() eremy  www fuck jeremy fr.Groups[1].Value.ToUpper() r",
+    "diagram":  {
+                    "tables":  [
+                                   {
+                                       "name":  "Task",
+                                       "schemaName":  "public",
+                                       "x":  -82.08366013071903,
+                                       "y":  -1.375163398692763
+                                   }
+                               ]
+                },
+    "tableGroups":  [
+
+                    ],
+    "referencePaths":  [
+
+                       ],
+    "detailLevel":  "All",
+    "createdAt":  "2026-01-26T15:00:00.000Z",
+    "updatedAt":  "2026-01-26T19:32:44.133Z"
+}

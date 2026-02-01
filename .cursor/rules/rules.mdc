@@ -1,0 +1,105 @@
+---
+alwaysApply: true
+---
+
+# Project-Specific Rules - MUST FOLLOW
+
+## File Naming (CRITICAL - Always Check)
+
+1. **Components**: MUST use UpperCamelCase (PascalCase)
+   - ✅ `UserProfile.tsx`, `PricingCard.tsx`
+   - ❌ `userProfile.tsx`, `pricing-card.tsx`, `pricing_card.tsx`
+
+2. **Folders**: MUST use snake_case
+   - ✅ `billing_portal/`, `user_settings/`
+   - ❌ `BillingPortal/`, `userSettings/`, `billing-portal/`
+
+3. **CSS Files**: MUST be in `_css/` subfolder with same name as component
+   - ✅ `components/PricingCard.tsx` → `components/_css/PricingCard.css`
+   - ❌ `components/PricingCard.css` (not in _css subfolder)
+   - Import: `import './_css/ComponentName.css';`
+
+## Import Rules (CRITICAL - Always Check)
+
+1. **NEVER use index files**: `index.ts` or `index.tsx` are FORBIDDEN
+2. **ALWAYS use `~/` path alias** for src/ imports
+   - ✅ `import { Header } from '~/components/Header';`
+   - ❌ `import { Header } from '@/components/Header';`
+   - ❌ `import { Header } from '../../../components/Header';`
+
+## Database Schema (CRITICAL - Always Sync)
+
+**When modifying `prisma/schema.prisma`:**
+1. MUST update `prisma/schema.dbml` in the SAME commit
+2. Add/update table definitions in DBML
+3. Add/update relationships (Ref) in DBML
+4. Keep all field types, defaults, and constraints in sync
+5. Run `npm run db:push` after changes
+
+**Steps (NEVER skip any):**
+1. Edit `schema.prisma`
+2. Update `schema.dbml` 
+3. Run migration
+4. Commit BOTH files together
+
+## Code Creation Rules
+
+1. **Creating a new component with CSS:**
+   - Create `MyComponent.tsx` in appropriate folder
+   - Create `_css/` subfolder if it doesn't exist
+   - Create `_css/MyComponent.css`
+   - Import CSS: `import './_css/MyComponent.css';`
+
+2. **Creating a new folder:**
+   - Use snake_case: `my_feature/`, `user_profile/`
+   - If for components with CSS, create `_css/` subfolder inside
+
+3. **Moving/Renaming files:**
+   - Update ALL import statements across codebase
+   - Move CSS files to maintain `_css/` structure
+   - Search entire codebase for old import paths
+
+## Git Workflow (ALWAYS Do This)
+
+After making ANY changes:
+```bash
+git add .
+git commit -m "Descriptive message"
+git push
+```
+
+## Verification Checklist (Run Before Finishing)
+
+Before completing ANY task, verify:
+- [ ] All components are UpperCamelCase
+- [ ] All folders are snake_case
+- [ ] All CSS files are in `_css/` subfolders
+- [ ] All imports use `~/` alias (not `@/` or relative)
+- [ ] No `index.ts` or `index.tsx` files created
+- [ ] If schema.prisma changed, schema.dbml is updated
+- [ ] Both schema files committed together
+- [ ] All import paths updated if files moved/renamed
+- [ ] Code formatted and linted
+
+## Common Mistakes to AVOID
+
+❌ Creating `billing-portal/` folder (use `billing_portal/`)
+❌ Creating `userProfile.tsx` component (use `UserProfile.tsx`)
+❌ Putting CSS next to component (use `_css/` subfolder)
+❌ Using `@/` imports (use `~/`)
+❌ Creating `index.tsx` barrel files (forbidden)
+❌ Forgetting to update `schema.dbml` when changing Prisma schema
+❌ Committing schema.prisma without schema.dbml
+❌ Moving files without updating all imports
+
+## Reference Documents
+
+- Full conventions: `/conventions_rules.md`
+- AI Checklist: `.cursor/AI_CHECKLIST.md`
+- Database guide: `prisma/SCHEMA_VISUALIZATION.md`
+
+## Before Completing ANY Task
+
+Review `.cursor/AI_CHECKLIST.md` and verify ALL items are checked.
+
+**IMPORTANT**: These rules are NOT optional. They must be followed for EVERY file created or modified. Use the checklist to verify compliance before finishing any task.

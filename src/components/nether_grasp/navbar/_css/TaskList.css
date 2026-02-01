@@ -1,0 +1,35 @@
+/* TaskList Component Styles */
+
+.task-list-container {
+  /* Container styles */
+}
+
+/* Utility classes for TaskList */
+.flex-1 { 
+  flex: 1 1 0%; 
+}
+
+.overflow-y-auto { 
+  overflow-y: auto; 
+}
+
+.flex { 
+  display: flex; 
+}
+
+.flex-col { 
+  flex-direction: column; 
+}
+
+.gap-2 { 
+  gap: 0.5rem; 
+}
+
+.gap-0\.5 { 
+  gap: 0.125rem; 
+}
+
+.p-2 { 
+  padding: 0.5rem; 
+}
+

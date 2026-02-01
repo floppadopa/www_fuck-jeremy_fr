@@ -1,0 +1,44 @@
+/* Nether Grasp Page - Dark Mode Theme Variables */
+
+:root {
+  /* Theme colors for dark mode */
+  --color-theme-border-primary: rgba(255, 255, 255, 0.1);
+  --color-theme-border-secondary: rgba(255, 255, 255, 0.15);
+  --color-theme-border-tertiary: rgba(255, 255, 255, 0.2);
+  --color-theme-border-quaternary: rgba(255, 255, 255, 0.1);
+  --color-theme-border-strong: rgba(255, 255, 255, 0.3);
+
+  --color-theme-text: #ffffff;
+  --color-theme-text-sec: rgba(255, 255, 255, 0.6);
+  --text-theme-text: #ffffff;
+
+  --color-theme-bg-button: rgba(255, 255, 255, 0.25);
+  --color-theme-bg-card: rgba(0, 0, 0, 0.8);
+  --color-theme-bg-card-02: rgba(0, 0, 0, 0.8);
+  --color-theme-card-03-hex: rgba(255, 255, 255, 0.05);
+  --color-theme-bg-hover: rgba(255, 255, 255, 0.15);
+  --color-theme-button-text: #ffffff;
+
+  --color-theme-accent: rgba(245, 78, 0, 1);
+
+  --foreground: rgba(255, 255, 255, 0.35);
+  --borders: rgba(255, 255, 255, 0.15);
+  --white: #ffffff;
+
+  --font-weight-normal: 400;
+
+  /* Text color variables */
+  --text-gray-200: rgba(255, 255, 255, 0.8);
+  --text-gray-300: rgba(255, 255, 255, 0.7);
+  --text-gray-400: rgba(255, 255, 255, 0.6);
+  --text-gray-700: rgba(255, 255, 255, 0.4);
+}
+
+/* Full page background with image */
+body {
+  background-image: url("/nether-grasp.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}

@@ -1,0 +1,70 @@
+/* Syntax Highlighting Styles - Dark Theme */
+
+.syntax-highlight {
+  padding: 12px;
+  pointer-events: none;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 0.815rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  color: #d4d4d4; /* Default light gray */
+}
+
+/* HTML Syntax Highlighting */
+.syntax-highlight .tag {
+  color: #569cd6 !important; /* Light blue for tags */
+}
+
+.syntax-highlight .tag-name {
+  color: #4ec9b0 !important; /* Teal for tag names */
+}
+
+.syntax-highlight .attr-name {
+  color: #9cdcfe !important; /* Light cyan for attribute names */
+}
+
+.syntax-highlight .attr-value {
+  color: #ce9178 !important; /* Orange for attribute values */
+}
+
+/* CSS Syntax Highlighting */
+.syntax-highlight .selector {
+  color: #d7ba7d !important; /* Gold for selectors */
+}
+
+.syntax-highlight .property {
+  color: #9cdcfe !important; /* Light cyan for properties */
+}
+
+.syntax-highlight .value {
+  color: #ce9178 !important; /* Orange for values */
+}
+
+.syntax-highlight .number {
+  color: #b5cea8 !important; /* Light green for numbers */
+}
+
+.syntax-highlight .unit {
+  color: #b5cea8 !important; /* Light green for units */
+}
+
+/* Common Syntax Highlighting */
+.syntax-highlight .comment {
+  color: #6a9955 !important; /* Green for comments */
+  font-style: italic;
+}
+
+.syntax-highlight .punctuation {
+  color: #808080 !important; /* Gray for punctuation */
+}
+
+.syntax-highlight .string {
+  color: #ce9178 !important; /* Orange for strings */
+}
+
+.syntax-highlight .keyword {
+  color: #c586c0 !important; /* Purple for keywords */
+}
+

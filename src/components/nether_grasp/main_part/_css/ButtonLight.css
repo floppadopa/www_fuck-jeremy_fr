@@ -1,0 +1,83 @@
+/* ButtonLight Component Styles - Dark Mode */
+
+.btn {
+  background-color: rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  color: var(--color-theme-button-text);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: var(--font-weight-normal);
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 8px;
+  gap: 4px;
+  line-height: 1;
+  display: inline-flex;
+}
+
+.btn:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Utility classes */
+.group {
+  position: relative;
+}
+
+.flex {
+  display: flex;
+}
+
+.h-\[32px\] {
+  height: 32px;
+}
+
+.w-full {
+  width: 100%;
+}
+
+.gap-1 {
+  gap: 0.25rem;
+}
+
+.outline-none {
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.duration-200 {
+  transition-duration: 0.2s;
+}
+
+.focus\:outline-none:focus {
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.select-none {
+  user-select: none;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.text-current {
+  color: currentcolor;
+}
+

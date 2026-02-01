@@ -1,0 +1,57 @@
+/* TextArea Component Styles - Dark Mode */
+
+.textarea-container {
+  margin-top: 1rem;
+}
+
+.web-text-base {
+  font-size: 0.815rem !important;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+}
+
+/* Dark mode theme variables */
+:root {
+  --color-theme-border-secondary: rgba(255, 255, 255, 0.2);
+  --color-theme-text: #ffffff;
+  --color-theme-text-sec: rgba(255, 255, 255, 0.6);
+  --color-theme-bg-card: rgba(0, 0, 0, 0.8);
+  --color-theme-bg-card-02: rgba(0, 0, 0, 0.8);
+  --color-theme-bg-hover: rgba(255, 255, 255, 0.15);
+}
+
+.border-theme-border-02 {
+  border-color: var(--color-theme-border-secondary);
+}
+
+.text-theme-text {
+  color: var(--color-theme-text);
+}
+
+.text-theme-text-sec {
+  color: var(--color-theme-text-sec);
+}
+
+.hover\:text-theme-text:hover {
+  color: var(--color-theme-text);
+}
+
+.hover\:bg-theme-bg-hover:hover {
+  background-color: var(--color-theme-bg-hover);
+}
+
+.focus-visible\:ring-theme-text-sec\/50:focus-visible {
+  --tw-ring-color: color-mix(in srgb, var(--color-theme-text-sec) 50%, transparent);
+}
+
+.focus-visible\:ring-offset-theme-bg-card:focus-visible {
+  --tw-ring-offset-color: var(--color-theme-bg-card);
+}
+
+@media not all and (min-width: 640px) {
+  .max-sm\:hidden {
+    display: none;
+  }
+}
+

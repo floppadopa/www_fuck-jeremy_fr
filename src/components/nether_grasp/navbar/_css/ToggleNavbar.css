@@ -1,0 +1,65 @@
+/* ToggleNavbar Component Styles - Extracted on 2025-11-06 */
+/* Note: unset values have been filtered out for cleaner CSS */
+
+.relative {
+  position: relative;
+}
+
+.inline-flex {
+  display: inline-flex;
+}
+
+.flex {
+  display: flex;
+}
+
+.size-4 {
+  width: 1rem;
+  height: 1rem;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
+}
+
+.outline-none {
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 0.15s;
+}
+
+.text-theme-text-sec {
+  color: var(--color-theme-text-sec);
+}
+
+.focus\:outline-none:focus {
+  outline: transparent solid 2px;
+  outline-offset: 2px;
+}
+
+
+
+
+
+
