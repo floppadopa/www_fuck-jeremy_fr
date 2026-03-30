@@ -38,5 +38,5 @@
     "**/*.js",
     ".next/types/**/*.ts"
   ],
-  "exclude": ["node_modules", "generated", "nether-bridge-server.js"]
+  "exclude": ["node_modules", "generated", "nether-bridge-server.js", "public"]
 }
