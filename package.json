@@ -4,7 +4,7 @@
     "private": true,
     "type": "module",
     "scripts": {
-        "build": "next build",
+        "build": "prisma generate && next build",
         "check": "next lint && tsc --noEmit",
         "db:generate": "prisma migrate dev",
         "db:migrate": "prisma migrate deploy",
@@ -13,17 +13,18 @@
         "dev": "concurrently \"npm run dev:next\" \"npm run nether-bridge\" --names \"next,bridge\" --prefix-colors \"cyan,magenta\"",
         "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx}\" --cache",
-        "postinstall": "prisma generate",
+        "postinstall": "prisma generate || true",
         "lint": "next lint",
         "lint:fix": "next lint --fix",
         "preview": "next build && next start",
         "start": "next start",
         "typecheck": "tsc --noEmit",
-        "dev:next": "next dev --turbo",
+        "dev:next": "next dev --turbo -p 3003",
         "nether-bridge": "node nether-bridge-server.js",
         "dev:no-bridge": "next dev --turbo"
     },
     "dependencies": {
+        "@prisma/client": "^6.19.2",
         "@t3-oss/env-nextjs": "^0.12.0",
         "@types/ws": "^8.18.1",
         "next": "^15.2.3",
@@ -35,7 +36,6 @@
     },
     "devDependencies": {
         "@eslint/eslintrc": "^3.3.1",
-        "@prisma/client": "^7.3.0",
         "@tailwindcss/postcss": "^4.0.15",
         "@types/node": "^20.14.10",
         "@types/pg": "^8.16.0",
